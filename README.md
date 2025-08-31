@@ -5,7 +5,7 @@ Assigment 1 for CS 618
   
   Assignment tasks
   
-  Create a new repository on github
+ * Create a new repository on github
   
   Create a new vite+react project in the root
   
