@@ -1,28 +1,8 @@
-# CS618_Assignment-1
-Assigment 1 for CS 618
+# React + Vite
 
-  Initialize frontend, backend, and db
-  
-  Assignment tasks
-  
- * Create a new repository on github
-  
-  Create a new vite+react project in the root
-  
-  Create a mongodb container
-  
-  Create a nodejs backend server
-  
-  Connect to your mongodb in backend
-  
-  Rubric items:
-  
-  Run Vite + React project through command line 
-  
-  Show vite+react home page
-  
-  Show mongodb container running in the containers tab in codespaces
-  
-  Run your backend through command line
-  
-  Show the backend response that is coming from the db to the backend url by browsing to it
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
