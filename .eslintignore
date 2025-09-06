@@ -1,2 +1,2 @@
-/dist
-vite.config.js
+dist/
+src/App.jsx
