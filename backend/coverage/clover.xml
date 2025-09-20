@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1758327544096" clover="3.2.0">
+  <project timestamp="1758327544096" name="All files">
+    <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="3" methods="10" coveredmethods="10" elements="30" coveredelements="29" complexity="0" loc="16" ncloc="16" packages="3" files="3" classes="3"/>
+    <package name="db">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="init.js" path="/workspaces/CS618_Assignment-1/backend/src/db/init.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="db.models">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="post.js" path="/workspaces/CS618_Assignment-1/backend/src/db/models/post.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="services">
+      <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="3" methods="8" coveredmethods="8"/>
+      <file name="posts.js" path="/workspaces/CS618_Assignment-1/backend/src/services/posts.js">
+        <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="3" methods="8" coveredmethods="8"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
