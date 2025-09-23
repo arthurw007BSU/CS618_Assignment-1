@@ -25,3 +25,33 @@ jobs:
         with:
           service_account: ${{ secrets.GOOGLECLOUD_SERVICE_ACCOUNT }}
           credentials_json: ${{ secrets.GOOGLECLOUD_CREDENTIALS }}
+      - name: Build and push backend image
+        uses: docker/build-push-action@v4
+        with:
+          context: ./backend
+          file: ./backend/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/blog-backend:latest
+      - id: deploy-backend
+        name: Deploy backend
+        uses: google-github-actions/deploy-cloudrun@v1
+        with:
+          service: blog-backend
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/blog-backend:latest
+          region: ${{ secrets.GOOGLECLOUD_REGION }}
+      - name: Build and push frontend image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/blog-frontend:latest
+          build-args: |
+            VITE_BACKEND_URL=${{ steps.deploy-backend.outputs.url }}/api/v1
+      - id: deploy-frontend
+        name: Deploy frontend
+        uses: google-github-actions/deploy-cloudrun@v1
+        with:
+          service: blog-frontend
+          image: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/blog-frontend@${{ steps.build-frontend.outputs.digest }}
+          region: ${{ secrets.GOOGLECLOUD_REGION }}
