@@ -1,3 +1,5 @@
 this is a trivial file to see if the ci/cd test will pass.
 cloud run was set to 8080.  set it to 80 to see if build will pass.
-created backend 2
+created backend-2 in cloud run.  it runs successfully from cloud run
+9/28  removed original cloud run backend container and build a new on.
+    it has successfully run from google cloud run.  this will test if it will run from github action.
