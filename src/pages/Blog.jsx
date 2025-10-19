@@ -26,6 +26,10 @@ export function Blog() {
     <div style={{ padding: 8 }}>
       <Helmet>
         <title>Full-Stack React Blog</title>
+        <meta
+          name='description'
+          content='A blog full of articles about Full-Stack React development.'
+        />
       </Helmet>
       <Header />
       <br />
@@ -52,8 +56,3 @@ export function Blog() {
     </div>
   )
 }
-
-/*Blog.propTypes = {
-  initialData: PropTypes.shape(PostList.propTypes.posts)
-}
-  */
