@@ -2,9 +2,8 @@ import { PostList } from '../components/PostList.jsx'
 import { CreatePost } from '../components/CreatePost.jsx'
 import { PostFilter } from '../components/PostFilter.jsx'
 import { PostSorting } from '../components/PostSorting.jsx'
-//import PropTypes from 'prop-types'
-
-import { Header } from '../components/header.jsx'
+import { Helmet } from 'react-helmet-async'
+import { Header } from '../components/Header.jsx'
 
 import { useState } from 'react'
 
@@ -25,6 +24,9 @@ export function Blog() {
 
   return (
     <div style={{ padding: 8 }}>
+      <Helmet>
+        <title>Full-Stack React Blog</title>
+      </Helmet>
       <Header />
       <br />
       <hr />
