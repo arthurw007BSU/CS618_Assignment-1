@@ -2,6 +2,7 @@ import { PostList } from '../components/PostList.jsx'
 import { CreatePost } from '../components/CreatePost.jsx'
 import { PostFilter } from '../components/PostFilter.jsx'
 import { PostSorting } from '../components/PostSorting.jsx'
+//import PropTypes from 'prop-types'
 
 import { Header } from '../components/header.jsx'
 
@@ -49,3 +50,8 @@ export function Blog() {
     </div>
   )
 }
+
+/*Blog.propTypes = {
+  initialData: PropTypes.shape(PostList.propTypes.posts)
+}
+  */
