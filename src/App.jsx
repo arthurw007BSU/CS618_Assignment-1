@@ -7,7 +7,6 @@ import { io } from 'socket.io-client'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-const socket = io(import.meta.env.VITE_SOCKET_HOST)
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -25,17 +24,24 @@ const router = createBrowserRouter([
   },
 ])
 
-socket.on('connect', () => {
-  console.log('connected to socket.io as', socket.id)
-  //socket.emit('chat.message','hello from the client')
-  socket.emit(
-    'chat.message',
-    new URLSearchParams(window.location.search).get('mymsg'),
-  )
+const socket = io(import.meta.env.VITE_SOCKET_HOST, {
+  query: 'room=' + new URLSearchParams(window.location.search).get('room'),
+  auth: {
+    token: new URLSearchParams(window.location.search).get('token'),
+  },
 })
+
+socket.on('connect', async () => {
+  console.log('connected to socket.io as', socket.id)
+  socket.emit('chat.message', 'hello from client')
+  const userInfo = await socket.emitWithAck('user.info', socket.id)
+  console.log('user info', userInfo)
+})
+
 socket.on('connect_error', (err) => {
   console.error('socket.io connect error:', err)
 })
+
 socket.on('chat.message', (msg) => {
   console.log(`${msg.username}: ${msg.message}`)
 })
