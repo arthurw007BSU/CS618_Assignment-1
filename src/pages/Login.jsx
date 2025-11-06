@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import { useMutation } from '@tanstack/react-query'
 import { useNavigate, Link } from 'react-router-dom'
+
 import { login } from '../api/users.js'
 import { useAuth } from '../contexts/AuthContext.jsx'
 
 export function Login() {
-  const [, setToken] = useAuth()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+
   const navigate = useNavigate()
+  const [, setToken] = useAuth()
 
   const loginMutation = useMutation({
     mutationFn: () => login({ username, password }),
@@ -23,12 +25,14 @@ export function Login() {
     e.preventDefault()
     loginMutation.mutate()
   }
+
   return (
     <form onSubmit={handleSubmit}>
-      <Link to='/'>Back to main pages</Link>
+      <Link to='/'>Back to main page</Link>
       <hr />
+      <br />
       <div>
-        <label htmlFor='create-username'> Username: </label>
+        <label htmlFor='create-username'>Username: </label>
         <input
           type='text'
           name='create-username'
@@ -51,7 +55,7 @@ export function Login() {
       <br />
       <input
         type='submit'
-        value={loginMutation.isPending ? 'logging in...' : 'Log In'}
+        value={loginMutation.isPending ? 'Logging in...' : 'Log In'}
         disabled={!username || !password || loginMutation.isPending}
       />
     </form>
