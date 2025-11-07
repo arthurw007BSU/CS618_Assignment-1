@@ -13,7 +13,6 @@ export function ChatMessage({ username, message }) {
     </div>
   )
 }
-
 ChatMessage.propTypes = {
   username: PropTypes.string,
   message: PropTypes.string.isRequired,
